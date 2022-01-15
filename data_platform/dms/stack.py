@@ -7,7 +7,7 @@ from aws_cdk import (
 
 import json
 
-from data_platform import Environment
+from data_platform import environment
 from common_stack import CommonStack
 from data_platform.data_lake.base import BaseDataLakeBucket
 
@@ -16,7 +16,7 @@ class RawDMSRole(iam.Role):
     def __init__(
         self,
         scope: core.Construct,
-        deploy_env: Environment,
+        deploy_env: environment,
         data_lake_raw_bucket: BaseDataLakeBucket,
         **kwargs,
     ) -> None:
