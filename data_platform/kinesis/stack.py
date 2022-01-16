@@ -59,7 +59,7 @@ class KinesisStack(core.Stack):
         data_lake_raw_bucket: BaseDataLakeBucket,
         **kwargs,
     ) -> None:
-        self.deploy_env = active_environment
+        self.deploy_env = "develop"
         self.data_lake_raw_bucket = data_lake_raw_bucket
         super().__init__(scope, id=f"{self.deploy_env}-kinesis-stack", **kwargs)
 
