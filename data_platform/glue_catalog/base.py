@@ -50,7 +50,7 @@ class BaseDataLakeGlueRole(iam.Role):
         self.layer = self.data_lake_bucket.layer
         super().__init__(
             scope,
-            id=f"iam-{self.deploy_env.value}-glue-data-lake-{self.layer.value}-role",
+            id=f"iam-{self.deploy_env}-glue-data-lake-{self.layer.value}-role",
             assumed_by=iam.ServicePrincipal("glue.amazonaws.com"),
             description=f"Allows using Glue on Data Lake {self.layer.value}",
         )
