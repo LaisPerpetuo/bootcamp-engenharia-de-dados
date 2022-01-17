@@ -14,7 +14,7 @@ dsn = (
         user="postgres",
         password="",
         port=5432,
-        host="rds-develop-orders-db.czneku7cnjtr.us-east-2.rds.amazonaws.com",
+        host="",
     )
 )
 

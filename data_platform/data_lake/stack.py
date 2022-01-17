@@ -14,7 +14,8 @@ class DataLakeStack(core.Stack):
         self.data_lake_raw_bucket = BaseDataLakeBucket(
             self,
             deploy_env=self.deploy_env,
-            layer=DataLakeLayer.RAW
+            layer=DataLakeLayer.RAW,
+            removal_policy = core.RemovalPolicy.DESTROY
         )
 
 
