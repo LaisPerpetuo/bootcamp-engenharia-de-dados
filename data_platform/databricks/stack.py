@@ -24,7 +24,7 @@ class DatabricksStack(core.Stack):
         cross_account_role = iam.Role(
             self,
             id=f"iam-{self.deploy_env}-databricks-cross-account-role",
-            assumed_by=iam.AccountPrincipal(account_id="414351767826"),
+            assumed_by=iam.AccountPrincipal(account_id="226904475050"),
             description=f"Allows databricks access to account",
         )
 
@@ -123,7 +123,7 @@ class DatabricksStack(core.Stack):
                         "sqs:ChangeMessageVisibilityBatch",
                     ],
                     resources=[
-                        f"arn:aws:s3:::s3-belisco-{self.deploy_env}-data-lake-*",
+                        f"arn:aws:s3:::s3-dados-{self.deploy_env}-data-lake-*",
                         f"arn:aws:sqs:{self.region}:{self.account}:databricks-auto-ingest-*",
                         f"arn:aws:sns:{self.region}:{self.account}:databricks-auto-ingest-*",
                     ],
